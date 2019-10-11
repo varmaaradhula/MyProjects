@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Sample Suite">
+
+
+<test name="Learning annotations">
+    <classes>
+        <class name="LoginTest" ></class>  
+    </classes>
+</test>
+</suite>

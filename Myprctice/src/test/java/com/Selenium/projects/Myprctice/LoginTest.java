@@ -37,10 +37,19 @@ public class LoginTest {
 		System.out.println("Inbox page title is "+title);
 		if(!title.contains("rkvarmaa@gmail.com")) {
 		Assert.fail("Login not successfull");
+		
+		wishingall();
+		
 			
 		}
-				
+	}
+		@Test
+		public void wishingall() {
+			
+			System.out.println("hello All");
+		}
+		
 	}
 	
 
-}
+
