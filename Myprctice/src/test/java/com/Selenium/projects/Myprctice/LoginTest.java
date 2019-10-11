@@ -49,6 +49,13 @@ public class LoginTest {
 			System.out.println("hello All");
 		}
 		
+		@Test
+		
+		public void preesha() {
+			
+			System.out.println("Hello preesha bangaru");
+		}
+		
 	}
 	
 
