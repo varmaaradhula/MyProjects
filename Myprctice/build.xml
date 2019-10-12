@@ -2,13 +2,12 @@
 <!DOCTYPE project [
 ]>
 
-<project name="Learning TestNG" default="usage" basedir=".">  
+<project name="Myprctice" default="usage" basedir=".">  
 
 <!-- ========== Initialize Properties =================================== -->
     <property environment="env"/>
     
     <property name="ws.home" value="${basedir}"/>
-	<!--property name="ws.jars" value="C:/Users/RKVarma/Desktop/Selenium/jars"/-->
     <property name="test.dest" value="${ws.home}/build"/>
     <property name="test.src" value="${ws.home}/src"/>
 	<property name="ng.result" value="test-output"/>
@@ -19,28 +18,19 @@
 	<path id="classpath_jars">
 	<fileset dir="${user.home}/.m2/repository" includes="**/*.jar"/>
 	</path>
-    <target name="setClassPath" unless="test.classpath">
-        <path id="classpath_jars">
-            <fileset dir="${ws.jars}" includes="*.jar"/>
-        </path>
-        <pathconvert pathsep=":" 
-            property="test.classpath" 
-            refid="classpath_jars"/>
-    </target>
+	<target name="setClassPath" unless="test.classpath">
+	<pathconvert refid="classpath_jars" property="test.classpath" pathsep=":"/>
+	</target>
 
     <target name="init" depends="setClassPath">
         <tstamp>
             <format property="start.time" pattern="MM/dd/yyyy hh:mm aa" />
         </tstamp>
-        <condition property="ANT" 
-            value="${env.ANT_HOME}/bin/ant.bat" 
-            else="${env.ANT_HOME}/bin/ant">
-                    <os family="windows" />
-        </condition>
-        <taskdef name="testng" classpath="${test.classpath}"
-               classname="org.testng.TestNGAntTask" />
-    
-    </target>
+    	<condition value="${env.ANT_HOME}/bin/ant.bat" property="ANT" else="${env.ANT_HOME}/bin/ant">
+    	<os family="windows"/>
+    	</condition>
+    	<taskdef name="testng" classname="org.testng.TestNGAntTask" classpath="${test.classpath}"/>
+    	</target>
   
     <!-- all -->
     <target name="all">
