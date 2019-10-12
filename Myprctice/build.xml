@@ -29,7 +29,7 @@
     	<condition value="${env.ANT_HOME}/bin/ant.bat" property="ANT" else="${env.ANT_HOME}/bin/ant">
     	<os family="windows"/>
     	</condition>
-    	<taskdef name="testng" classname="org.testng.TestNGAntTask" classpath="${test.classpath}"/>
+      	<taskdef name="testng" classpathref="classpath_jars" classname="org.testng.TestNGAntTask" />
     	</target>
   
     <!-- all -->
