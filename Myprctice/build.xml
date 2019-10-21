@@ -58,7 +58,7 @@
             srcdir="${test.src}" 
             target="1.5" 
             classpath="${test.classpath}"
-        >
+    	>
         </javac>
       </target>
 
